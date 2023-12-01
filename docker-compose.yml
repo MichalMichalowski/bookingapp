@@ -1,0 +1,20 @@
+services:
+  mysql-booking-db:
+    container_name: mysql-booking-db
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'booking-db'
+      MYSQL_USER: 'webadmin'
+      MYSQL_PASSWORD: 'webadmin'
+      MYSQL_ROOT_PASSWORD: 'sysadm'
+      TZ: 'Europe/Warsaw'
+    ports:
+      - '5500:3306'
+    expose:
+      - '5500'
+    volumes:
+      - mysql-booking-db:/var/lib/booking-db
+
+volumes:
+  mysql-booking-db:
