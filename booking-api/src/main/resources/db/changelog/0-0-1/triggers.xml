@@ -7,8 +7,5 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
       http://www.liquibase.org/xml/ns/pro
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
-    <include relativeToChangelogFile="true" file="tables.xml"/>
-    <include relativeToChangelogFile="true" file="alter_table.xml"/>
-    <include relativeToChangelogFile="true" file="views.xml"/>
-    <include relativeToChangelogFile="true" file="triggers.xml"/>
+    <include relativeToChangelogFile="true" file="triggers/triggers_changelog1.sql"/>
 </databaseChangeLog>
