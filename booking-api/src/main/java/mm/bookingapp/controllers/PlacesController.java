@@ -1,8 +1,6 @@
 package mm.bookingapp.controllers;
 
-import mm.bookingapp.entities.PlaceDataEntity;
 import mm.bookingapp.models.Place;
-import mm.bookingapp.repositories.PlacesEntityRepository;
 import mm.bookingapp.services.PlacesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

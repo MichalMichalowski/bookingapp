@@ -6,17 +6,21 @@ import lombok.Getter;
 @Entity
 @Table(name = "Places_V")
 @Getter
-public class PlaceDataEntity {
+public class PlaceDataViewEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Long id;
     @Column(name = "placeName")
     String placeName;
-    @Column(name = "isAvailable")
-    String isAvailable;
     @Column(name = "placeDescription")
     String placeDescription;
+    @Column(name = "firstName")
+    String firstName;
+    @Column(name = "lastName")
+    String lastName;
+    @Column(name = "company")
+    String company;
     @Column(name = "cityName")
     String cityName;
     @Column(name = "streetName")

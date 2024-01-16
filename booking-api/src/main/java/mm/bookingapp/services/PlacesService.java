@@ -1,6 +1,6 @@
 package mm.bookingapp.services;
 
-import mm.bookingapp.entities.PlaceDataEntity;
+import mm.bookingapp.entities.PlaceDataViewEntity;
 import mm.bookingapp.models.Place;
 import mm.bookingapp.repositories.PlacesEntityRepository;
 import mm.bookingapp.utils.EntitiesConverter;
@@ -17,7 +17,7 @@ public class PlacesService {
     private PlacesEntityRepository placesEntityRepository;
 
     public List<Place> getAllPlaces() {
-        List<PlaceDataEntity> placesEntities = placesEntityRepository.findAll();
+        List<PlaceDataViewEntity> placesEntities = placesEntityRepository.findAll();
         return placesEntities.stream().map(
                 EntitiesConverter::placeEntityToPlaceModel).collect(Collectors.toList());
     }
