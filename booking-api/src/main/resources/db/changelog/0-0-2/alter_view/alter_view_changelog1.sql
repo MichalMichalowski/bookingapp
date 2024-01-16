@@ -18,6 +18,6 @@ SELECT
 	cd.apartmentNum
 FROM Places p
 LEFT JOIN ContactData cd ON p.contactDataId = cd.id
-LEFT JOIN Owners o ON p.ownerDataId = o.id
+LEFT JOIN UserOwnerInfo o ON p.ownerDataId = o.id
 
 ;
