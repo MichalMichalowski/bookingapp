@@ -12,3 +12,5 @@ ALTER TABLE Places
 ADD CONSTRAINT FK_ownerData
 FOREIGN KEY (ownerDataId)
 REFERENCES UserOwnerInfo(id);
+
+
