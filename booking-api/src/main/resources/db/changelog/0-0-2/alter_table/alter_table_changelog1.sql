@@ -11,4 +11,4 @@ DROP COLUMN isAvailable;
 ALTER TABLE Places
 ADD CONSTRAINT FK_ownerData
 FOREIGN KEY (ownerDataId)
-REFERENCES Owners(id);
+REFERENCES UserOwnerInfo(id);
