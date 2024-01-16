@@ -10,5 +10,4 @@
     <include relativeToChangelogFile="true" file="tables.xml"/>
     <include relativeToChangelogFile="true" file="alter_table.xml"/>
     <include relativeToChangelogFile="true" file="views.xml"/>
-    <include relativeToChangelogFile="true" file="triggers.xml"/>
 </databaseChangeLog>
