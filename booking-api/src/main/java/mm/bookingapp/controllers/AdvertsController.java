@@ -1,11 +1,11 @@
 package mm.bookingapp.controllers;
 
 import lombok.AllArgsConstructor;
+import mm.bookingapp.dtos.AdvertDTO;
 import mm.bookingapp.models.Advert;
 import mm.bookingapp.services.AdvertsService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +20,10 @@ public class AdvertsController {
     List<Advert> getAllAdverts() {
         return advertsService.getAllAdvertsWithPlace();
     }
+
+    @PostMapping(path = "/v1/add-advert")
+    ResponseEntity<String> addNewAdvert(@RequestBody AdvertDTO advert) {
+        return advertsService.addNewAdvert(advert);
+    }
+
 }
