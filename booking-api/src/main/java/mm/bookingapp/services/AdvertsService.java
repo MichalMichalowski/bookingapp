@@ -1,14 +1,18 @@
 package mm.bookingapp.services;
 
 import lombok.AllArgsConstructor;
+import mm.bookingapp.dtos.AdvertDTO;
 import mm.bookingapp.entities.AdvertEntity;
 import mm.bookingapp.entities.PlaceDataViewEntity;
 import mm.bookingapp.models.Advert;
 import mm.bookingapp.repositories.AdvertsEntityRepository;
 import mm.bookingapp.repositories.PlacesEntityRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -40,5 +44,19 @@ public class AdvertsService {
                                 .build())
                         .orElse(null))
                 .collect(Collectors.toList());
+    }
+
+    public ResponseEntity<String> addNewAdvert(AdvertDTO advert) {
+        Long result = advertsEntityRepository.addAdvert(
+                advert.getUserId(), advert.getPlaceName(), advert.getPlaceDescription(),
+                advert.getCityName(), advert.getStreetName(), advert.getPostalCode(),
+                advert.getStreetNum(), advert.getApartmentNum()
+        );
+
+        if (result == -1) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User data not found");
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body("New advert successfully added");
     }
 }
